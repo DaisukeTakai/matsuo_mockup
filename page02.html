@@ -126,7 +126,7 @@
 </head>
 
 <body class="bg-slate-100">
-    <div class="relative flex h-auto min-h-screen w-full flex-col justify-between group/design-root overflow-x-hidden"
+    <div class="relative flex min-h-screen w-full flex-col justify-between group/design-root"
         style='font-family: Inter, "Noto Sans", sans-serif;'>
         <div class="flex-grow">
             <header
@@ -137,7 +137,7 @@
                         <span class="material-symbols-outlined">arrow_back_ios_new</span>
                     </a>
                     <h2
-                        class="flex-1 text-center text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-fuchsia-500 to-pink-400 drop-shadow-lg tracking-tight mb-1">
+                        class="flex-1 text-center text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-fuchsia-500 to-pink-400 drop-shadow-lg tracking-tight mb-1">
                         AIによる診療情報要約
                     </h2>
                 </div>
@@ -146,22 +146,22 @@
                 <div class="mb-8">
                     <p class="mt-2 text-slate-700/90 font-medium">AI生成された診療情報提供書案です。下線部分にカーソルを合わせると引用元を確認できます。</p>
                 </div>
-                <div class="mb-4 flex flex-wrap gap-4 justify-center">
-                    <div
-                        class="w-full bg-white/90 rounded px-6 py-4 shadow-xl ring-2 ring-cyan-100 flex flex-row items-center justify-between gap-8 mb-6">
-                        <div class="flex-1 min-w-0">
-                            <span class="font-semibold text-slate-700 text-sm block mb-0.5">患者名</span>
-                            <span class="text-lg text-slate-900 block truncate">山田 永愛</span>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <span class="font-semibold text-slate-700 text-sm block mb-0.5">データ取得期間</span>
-                            <span class="text-lg text-slate-900 block truncate">2023/10/20～2023/10/28</span>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <span class="font-semibold text-slate-700 text-sm block mb-0.5">データ取得種別</span>
-                            <span class="text-lg text-slate-900 block truncate">診療記録・検査・投薬情報</span>
-                        </div>
+                <div
+                    class="w-full bg-white/95 rounded px-6 py-4 shadow-xl ring-2 ring-cyan-100 flex flex-row items-center justify-between gap-8 mb-6 sticky top-[72px] z-10 backdrop-blur">
+                    <div class="flex-1 min-w-0">
+                        <span class="font-semibold text-slate-700 text-sm block mb-0.5">患者名</span>
+                        <span class="text-lg text-slate-900 block truncate">山田 永愛</span>
                     </div>
+                    <div class="flex-1 min-w-0">
+                        <span class="font-semibold text-slate-700 text-sm block mb-0.5">データ取得期間</span>
+                        <span class="text-lg text-slate-900 block truncate">2023/10/20～2023/10/28</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <span class="font-semibold text-slate-700 text-sm block mb-0.5">データ取得種別</span>
+                        <span class="text-lg text-slate-900 block truncate">診療記録・検査・投薬情報</span>
+                    </div>
+                </div>
+                <div class="mb-4 flex flex-wrap gap-4 justify-center">
                     <div
                         class="mb-8 rounded-xl border-0 bg-gradient-to-br from-cyan-100/80 via-violet-50/80 to-pink-50/70 backdrop-blur-md p-6 sm:p-8 text-base text-slate-800 shadow-xl ring-2 ring-cyan-200/60">
                         <h3 class="flex items-center text-lg font-semibold text-slate-900 mb-4 border-b pb-3">
