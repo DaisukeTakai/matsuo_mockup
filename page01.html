@@ -79,6 +79,16 @@
                                 画像検査レポート
                             </label>
                             <label class="flex items-center gap-1">
+                                <input type="checkbox" name="type" value="physio"
+                                    class="rounded border-emerald-400 text-emerald-600" />
+                                生理検査結果
+                            </label>
+                            <label class="flex items-center gap-1">
+                                <input type="checkbox" name="type" value="patho"
+                                    class="rounded border-yellow-400 text-yellow-600" />
+                                病理検査レポート
+                            </label>
+                            <label class="flex items-center gap-1">
                                 <input type="checkbox" name="type" value="visit"
                                     class="rounded border-violet-400 text-violet-600" />
                                 診療記録
@@ -134,13 +144,76 @@
                                 <td>画像検査レポート</td>
                                 <td>CTで右冠動脈閉塞、急性心筋梗塞の所見</td>
                             </tr>
+                            <tr>
+                                <td class="text-center">
+                                    <input type="checkbox" class="rounded border-emerald-400 text-emerald-600"
+                                        name="record" />
+                                </td>
+                                <td>2023/10/28</td>
+                                <td>生理検査結果</td>
+                                <td>安静時心電図：洞調律、QT延長傾向</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    <input type="checkbox" class="rounded border-yellow-400 text-yellow-600"
+                                        name="record" />
+                                </td>
+                                <td>2023/10/29</td>
+                                <td>病理検査レポート</td>
+                                <td>胃生検：中分化型腺癌、一部粘液癌成分</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    <input type="checkbox" class="rounded border-cyan-400 text-cyan-600"
+                                        name="record" />
+                                </td>
+                                <td>2023/10/29</td>
+                                <td>血液検査</td>
+                                <td>Hb 12.8 g/dL、WBC 4500、PLT 正常範囲</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    <input type="checkbox" class="rounded border-fuchsia-400 text-fuchsia-600"
+                                        name="record" />
+                                </td>
+                                <td>2023/11/01</td>
+                                <td>画像検査レポート</td>
+                                <td>X線：右肺野に陰影、経過観察要</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    <input type="checkbox" class="rounded border-emerald-400 text-emerald-600"
+                                        name="record" />
+                                </td>
+                                <td>2023/11/02</td>
+                                <td>生理検査結果</td>
+                                <td>運動負荷心電図：ST低下なし、異常所見なし</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    <input type="checkbox" class="rounded border-yellow-400 text-yellow-600"
+                                        name="record" />
+                                </td>
+                                <td>2023/11/03</td>
+                                <td>病理検査レポート</td>
+                                <td>肝生検：脂肪肝の疑い、悪性所見なし</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    <input type="checkbox" class="rounded border-violet-400 text-violet-600"
+                                        name="record" />
+                                </td>
+                                <td>2023/11/04</td>
+                                <td>診療記録</td>
+                                <td>処方：アムロジピン増量、次回2週間後再診</td>
+                            </tr>
                         </tbody>
                     </table>
                 </form>
             </div>
             <div class="flex justify-center gap-4">
                 <a id="makeAI" href="page03.html"
-                    class="py-2 px-4 rounded-lg text-white font-bold bg-gradient-to-tr from-cyan-400 via-fuchsia-400 to-pink-400 shadow hover:from-cyan-500 hover:to-pink-500 transition flex items-center gap-1 text-center no-underline">
+                    class="pointer-events-none opacity-50 py-2 px-4 rounded-lg text-white font-bold bg-gradient-to-tr from-cyan-400 via-fuchsia-400 to-pink-400 shadow hover:from-cyan-500 hover:to-pink-500 transition flex items-center gap-1 text-center no-underline">
                     <span class="material-symbols-outlined text-base">auto_awesome</span> AI診療情報を作成
                 </a>
             </div>
@@ -154,6 +227,10 @@
             block.classList.remove('hidden');
             block.classList.add('block');
             block.scrollIntoView({ behavior: "smooth", block: "center" });
+
+            // 「AI診療情報を作成」ボタンを有効化
+            var makeAI = document.getElementById('makeAI');
+            makeAI.classList.remove("pointer-events-none", "opacity-50");
         };
         // AI診療情報作成モックボタン
         // ↑ "AI診療情報を作成"ボタンはaタグ遷移のためJS不要
