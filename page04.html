@@ -60,13 +60,14 @@
                         <label for="deptInput" class="block text-sm font-semibold text-slate-700 mb-1">診療科</label>
                         <input type="text" id="deptInput" name="department"
                             class="w-full rounded border-fuchsia-400 px-3 py-2" placeholder="例: 循環器内科"
-                            autocomplete="off" />
+                            autocomplete="off" value="循環器内科" />
+                        <p class="text-xs text-slate-500 mt-1 ml-1">※本文内容からAIが推定</p>
                     </div>
                     <div>
                         <label for="docInput" class="block text-sm font-semibold text-slate-700 mb-1">担当医名</label>
                         <input type="text" id="docInput" name="doctor"
-                            class="w-full rounded border-violet-400 px-3 py-2" placeholder="例: 山田 太郎"
-                            autocomplete="off" />
+                            class="w-full rounded border-violet-400 px-3 py-2" placeholder="例: 山田 太郎" autocomplete="off"
+                            value="ご担当先生" />
                     </div>
                     <div class="mt-6 flex justify-center">
                         <button type="button" id="sendBtn"
