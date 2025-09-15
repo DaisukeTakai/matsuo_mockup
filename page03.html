@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AI診療情報作成中 - モック</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link as="style"
+        href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900"
+        onload="this.rel='stylesheet'" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+        body {
+            min-height: 100dvh;
+            background: linear-gradient(130deg, #b9e6f8 0%, #e0b0ff 35%, #96e5b0 90%, #f6e0fc 100%);
+            font-family: 'Inter', 'Noto Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-100 flex items-center justify-center min-h-screen">
+    <div class="flex flex-col items-center justify-center">
+        <span
+            class="material-symbols-outlined animate-spin text-6xl text-cyan-400 mb-6 select-none">progress_activity</span>
+        <div class="text-xl font-semibold text-slate-700 mb-2">AI診療情報を作成しています</div>
+        <div class="text-base text-slate-600">しばらくお待ちください...</div>
+    </div>
+    <script>
+        setTimeout(function () {
+            window.location.href = "page02.html";
+        }, 3000);
+    </script>
+</body>
+
+</html>
