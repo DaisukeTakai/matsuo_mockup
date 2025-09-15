@@ -1,0 +1,489 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link as="style"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+        onload="this.rel='stylesheet'" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>Mock up</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-50: #f0f9ff;
+            --primary-100: #e0f2fe;
+            --primary-200: #bae6fd;
+            --primary-300: #7dd3fc;
+            --primary-400: #38bdf8;
+            --primary-500: #0ea5e9;
+            --primary-600: #0284c7;
+            --primary-700: #0369a1;
+            --primary-800: #075985;
+            --primary-900: #0c4a6e;
+            --primary-950: #082f49;
+
+            --source-sky: #0ea5e9;
+            --source-pink: #ec4899;
+            --source-purple: #8b5cf6;
+            --source-green: #10b981;
+            --source-orange: #f97316;
+        }
+        .decoration-sky-500 { --tw-text-opacity: 1; text-decoration-color: var(--source-sky); }
+        .decoration-pink-500 { --tw-text-opacity: 1; text-decoration-color: var(--source-pink); }
+        .decoration-purple-500 { --tw-text-opacity: 1; text-decoration-color: var(--source-purple); }
+        .decoration-green-500 { --tw-text-opacity: 1; text-decoration-color: var(--source-green); }
+        .decoration-orange-500 { --tw-text-opacity: 1; text-decoration-color: var(--source-orange); }
+
+        .border-sky-500 { border-color: var(--source-sky); }
+        .border-pink-500 { border-color: var(--source-pink); }
+        .border-purple-500 { border-color: var(--source-purple); }
+        .border-green-500 { border-color: var(--source-green); }
+        .border-orange-500 { border-color: var(--source-orange); }
+
+        .bg-sky-500 { background-color: var(--source-sky); }
+    </style>
+    <style>
+        body {
+            min-height: 100dvh;
+            /* 鮮やかなブルーやピンク・パープル主体のグラデーション */
+            background: linear-gradient(130deg, #b9e6f8 0%, #e0b0ff 35%, #fcb1da 70%, #f6e0fc 100%);
+            background-attachment: fixed;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            cursor: pointer;
+            overflow: visible !important;
+            /* ツールチップが被らないように */
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            min-width: 220px;
+            max-width: 340px;
+            width: max-content;
+            background-color: white;
+            color: #374151;
+            /* gray-700 */
+            text-align: left;
+            border-radius: 8px;
+            position: absolute;
+            z-index: 9999;
+            /* 画面上で必ず表示 */
+            bottom: 140%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            pointer-events: auto;
+            transition: opacity 0.3s;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.13), 0 4px 10px -4px rgb(0 0 0 / 0.09);
+            border: 1px solid #e5e7eb;
+            /* gray-200 */
+            overflow: hidden;
+        }
+
+        .tooltip .tooltiptext-header {
+            padding: 8px 12px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.875rem;
+        }
+
+        .tooltip .tooltiptext-body {
+            padding: 12px;
+            font-size: 0.875rem;
+            color: #4b5563;
+            /* gray-600 */
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -6px;
+            border-width: 6px;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding: 0 1rem;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-100">
+    <div class="relative flex h-auto min-h-screen w-full flex-col justify-between group/design-root overflow-x-hidden"
+        style='font-family: Inter, "Noto Sans", sans-serif;'>
+        <div class="flex-grow">
+            <header
+                class="sticky top-0 z-20 bg-gradient-to-r from-primary-700/90 to-purple-700/80 backdrop-blur-lg shadow-lg border-b-0">
+                <div class="mx-auto max-w-4xl flex items-center p-4">
+                    <a href="page01.html"
+                        class="text-slate-600 hover:text-slate-900 rounded-full p-1.5 hover:bg-slate-100 transition-colors">
+                        <span class="material-symbols-outlined">arrow_back_ios_new</span>
+                    </a>
+                    <h2
+                        class="flex-1 text-center text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-fuchsia-500 to-pink-400 drop-shadow-lg tracking-tight mb-1">
+                        AIによる診療情報要約
+                    </h2>
+                </div>
+            </header>
+            <main class="p-4 sm:p-6 mx-auto max-w-4xl">
+                <div class="mb-8">
+                    <p class="mt-2 text-slate-700/90 font-medium">AI生成された診療情報提供書案です。下線部分にカーソルを合わせると引用元を確認できます。</p>
+                </div>
+                <div class="mb-4 flex flex-wrap gap-4 justify-center">
+                    <div
+                        class="flex-1 min-w-[200px] max-w-xs bg-white/80 rounded-xl px-4 py-3 shadow ring-1 ring-cyan-100 flex flex-col items-center text-center">
+                        <span class="font-semibold text-slate-700 mb-1 self-start text-left text-sm w-full">患者名</span>
+                        <span class="text-lg text-slate-900">山田 永愛</span>
+                    </div>
+                    <div
+                        class="flex-1 min-w-[200px] max-w-xs bg-white/80 rounded-xl px-4 py-3 shadow ring-1 ring-cyan-100 flex flex-col items-center text-center">
+                        <span
+                            class="font-semibold text-slate-700 mb-1 self-start text-left text-sm w-full">データ取得期間</span>
+                        <span class="text-lg text-slate-900">2023/10/20～2023/10/28</span>
+                    </div>
+                    <div
+                        class="flex-1 min-w-[200px] max-w-xs bg-white/80 rounded-xl px-4 py-3 shadow ring-1 ring-cyan-100 flex flex-col items-center text-center">
+                        <span
+                            class="font-semibold text-slate-700 mb-1 self-start text-left text-sm w-full">データ取得種別</span>
+                        <span class="text-lg text-slate-900">診療記録・検査・投薬情報</span>
+                    </div>
+                </div>
+                <div
+                    class="mb-8 rounded-xl border-0 bg-gradient-to-br from-cyan-100/80 via-violet-50/80 to-pink-50/70 backdrop-blur-md p-6 sm:p-8 text-base text-slate-800 shadow-xl ring-2 ring-cyan-200/60">
+                    <h3 class="flex items-center text-lg font-semibold text-slate-900 mb-4 border-b pb-3">
+                        <span class="material-symbols-outlined mr-2 text-primary-600">summarize</span>
+                        診療情報提供書
+                    </h3>
+                    <div
+                        class="relative z-10 mb-8 rounded-xl border bg-gradient-to-br from-white/80 to-pink-100/70 backdrop-blur-md p-6 sm:p-8 text-base text-slate-800 shadow-md ring-1 ring-pink-100">
+                        <!-- <h3 class="flex items-center text-lg font-semibold text-slate-900 mb-4 border-b pb-3">
+                            <span class="material-symbols-outlined mr-2 text-primary-600">summarize</span>
+                            診療情報サマリー
+                        </h3> -->
+
+                        <div class="space-y-4 text-slate-700 leading-relaxed" style="overflow: visible !important;">
+                            <p>
+                                平素より大変お世話になっております。<br>
+                                上記の患者様（68歳、男性）につきまして、以下の通りご報告いたします。
+                            </p>
+
+                            <div>
+                                <p class="font-semibold text-slate-800">【診断名】</p>
+                                <p>急性心筋梗塞（下壁）</p>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold text-slate-800">【既往歴】</p>
+                                <div>
+                                    <span class="tooltip">
+                                        <span
+                                            class="underline decoration-sky-500 decoration-2 underline-offset-4 font-medium">
+                                            高血圧症、2型糖尿病
+                                        </span>
+                                        <span class="tooltiptext">
+                                            <div class="tooltiptext-header"
+                                                style="background-color: var(--source-sky);">
+                                                2023/10/26 外来診察記録
+                                            </div>
+                                            <div class="tooltiptext-body">
+                                                S) 特になし O) BP 145/90mmHg, FBS 128mg/dL. A)
+                                                高血圧、2型糖尿病。コントロールは...
+                                            </div>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold text-slate-800">【現病歴・経過】</p>
+                                <div>
+                                    3日前からの
+                                    <span class="tooltip">
+                                        <span
+                                            class="underline decoration-pink-500 decoration-2 underline-offset-4 font-medium">
+                                            持続する胸痛
+                                        </span>
+                                        <span class="tooltiptext">
+                                            <div class="tooltiptext-header"
+                                                style="background-color: var(--source-pink);">
+                                                2023/10/26 外来診察記録
+                                            </div>
+                                            <div class="tooltiptext-body">
+                                                S) 3日前から胸のあたりが締め付けられるような痛みが続いている。冷や汗も出る。 O)
+                                                ...</div>
+                                        </span></span>を主訴に当院を受診。心電図にて下壁誘導の
+                                    <span class="tooltip">
+                                        <span
+                                            class="underline decoration-purple-500 decoration-2 underline-offset-4 font-medium">
+                                            ST上昇
+                                        </span>
+                                        <span class="tooltiptext">
+                                            <div class="tooltiptext-header"
+                                                style="background-color: var(--source-purple);">2023/10/26 心電図検査結果
+                                            </div>
+                                            <div class="tooltiptext-body">
+                                                所見: II, III, aVFでST上昇。急性下壁心筋梗塞の疑い。
+                                            </div>
+                                        </span>
+                                    </span>
+                                    を認め、同日緊急心臓カテーテル検査を施行いたしました。右冠動脈(RCA)の
+                                    <span class="tooltip">
+                                        <span
+                                            class="underline decoration-green-500 decoration-2 underline-offset-4 font-medium">
+                                            完全閉塞に対し、薬剤溶出性ステント(DES)留置術
+                                        </span>
+                                        <span class="tooltiptext">
+                                            <div class="tooltiptext-header"
+                                                style="background-color: var(--source-green);">
+                                                2023/10/27 心臓カテーテルレポート
+                                            </div>
+                                            <div class="tooltiptext-body">
+                                                診断: 急性心筋梗塞 (RCA #2 total occlusion)。治療:
+                                                ...薬剤溶出性ステントを留置した。
+                                            </div>
+                                        </span>
+                                    </span>
+                                    を施行。術後の経過は良好であり、
+                                    <span class="tooltip">
+                                        <span
+                                            class="underline decoration-orange-500 decoration-2 underline-offset-4 font-medium">
+                                            胸痛は速やかに消失
+                                        </span>
+                                        <span class="tooltiptext">
+                                            <div class="tooltiptext-header"
+                                                style="background-color: var(--source-orange);">
+                                                2023/10/28 看護記録
+                                            </div>
+                                            <div class="tooltiptext-body">
+                                                S) "胸の痛みは全くありません。" O) 表情は穏やか。バイタルサイン安定。...
+                                            </div>
+                                        </span>
+                                    </span>
+                                    しております。
+                                </div>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold text-slate-800">【特記事項】</p>
+                                <ul class="list-disc pl-5">
+                                    <li><span class="tooltip"><span
+                                                class="underline decoration-sky-500 decoration-2 underline-offset-4 font-medium">アスピリンに対する薬疹のアレルギー歴</span><span
+                                                class="tooltiptext">
+                                                <div class="tooltiptext-header"
+                                                    style="background-color: var(--source-sky);">2023/10/26 外来診察記録</div>
+                                                <div class="tooltiptext-body">問診: アレルギー歴としてアスピリンによる薬疹あり。</div>
+                                            </span></span>がございます。</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold text-slate-800">【処方内容】</p>
+                                <ul class="list-disc pl-5">
+                                    <li><span class="tooltip"><span
+                                                class="underline decoration-green-500 decoration-2 underline-offset-4 font-medium">クロピドグレル
+                                                75mg 1T/日</span><span class="tooltiptext">
+                                                <div class="tooltiptext-header"
+                                                    style="background-color: var(--source-green);">2023/10/27
+                                                    心臓カテーテルレポート</div>
+                                                <div class="tooltiptext-body">術後処方: クロピドグレル 75mg 1T1x, アトルバスタチン 20mg
+                                                    1T1x, ラミプリル 2.5mg 1T1x</div>
+                                            </span></span></li>
+                                    <li><span class="tooltip"><span
+                                                class="underline decoration-green-500 decoration-2 underline-offset-4 font-medium">アトルバスタチン
+                                                20mg 1T/日</span><span class="tooltiptext">
+                                                <div class="tooltiptext-header"
+                                                    style="background-color: var(--source-green);">2023/10/27
+                                                    心臓カテーテルレポート</div>
+                                                <div class="tooltiptext-body">術後処方: クロピドグレル 75mg 1T1x, アトルバスタチン 20mg
+                                                    1T1x, ラミプリル 2.5mg 1T1x</div>
+                                            </span></span></li>
+                                    <li><span class="tooltip"><span
+                                                class="underline decoration-green-500 decoration-2 underline-offset-4 font-medium">ラミプリル
+                                                2.5mg 1T/日</span><span class="tooltiptext">
+                                                <div class="tooltiptext-header"
+                                                    style="background-color: var(--source-green);">2023/10/27
+                                                    心臓カテーテルレポート</div>
+                                                <div class="tooltiptext-body">術後処方: クロピドグレル 75mg 1T1x, アトルバスタチン 20mg
+                                                    1T1x, ラミプリル 2.5mg 1T1x</div>
+                                            </span></span></li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold text-slate-800">【今後の治療方針】</p>
+                                <p>
+                                    現在は症状も安定しており、心臓リハビリテーションへ移行し、退院に向けた生活指導を進めていく方針です。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="flex items-center text-lg font-semibold text-slate-900 mt-6 mb-4 border-b pb-3">
+                        <span class="material-symbols-outlined mr-2 text-primary-600">priority_high</span>
+                        特記事項
+                    </h3>
+                    <ul class="list-disc pl-5 space-y-2 leading-relaxed">
+                        <li><span class="tooltip"><span
+                                    class="underline decoration-sky-500 decoration-2 underline-offset-4 font-medium">アスピリンに対するアレルギー歴</span><span
+                                    class="tooltiptext">
+                                    <div class="tooltiptext-header" style="background-color: var(--source-sky);">
+                                        2023/10/26 外来診察記録</div>
+                                    <div class="tooltiptext-body">問診: アレルギー歴としてアスピリンによる薬疹あり。</div>
+                                </span></span>あり。
+                        </li>
+                        <li>薬剤：<span class="tooltip"><span
+                                    class="underline decoration-green-500 decoration-2 underline-offset-4 font-medium">クロピドグレル、アトルバスタチン、ラミプリル</span><span
+                                    class="tooltiptext">
+                                    <div class="tooltiptext-header" style="background-color: var(--source-green);">
+                                        2023/10/27 心臓カテーテルレポート</div>
+                                    <div class="tooltiptext-body">術後処方: クロピドグレル 75mg 1T1x, アトルバスタチン 20mg 1T1x, ラミプリル
+                                        2.5mg 1T1x</div>
+                                </span></span>を開始。
+                        </li>
+                    </ul>
+                </div>
+                <div class="mb-20">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">引用元情報</h3>
+                    <div class="space-y-3">
+                        <div class="rounded-lg bg-white shadow-sm overflow-hidden border border-slate-200">
+                            <button
+                                class="accordion-button flex w-full items-center justify-between p-4 text-left hover:bg-slate-50 transition-colors border-l-4 border-sky-500">
+                                <div>
+                                    <p class="text-base font-medium text-slate-800">2023/10/26 外来診察記録</p>
+                                    <p class="text-sm text-slate-500">担当医：山田 太郎</p>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-slate-500 transition-transform duration-300">expand_more</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="py-4 border-t text-sm text-slate-600">
+                                    <div class="mb-2 font-semibold text-slate-700">主訴</div>
+                                    <div>3日前から胸の締め付け感あり、冷や汗を伴う。</div>
+                                    <div class="mb-2 font-semibold text-slate-700 mt-3">既往歴</div>
+                                    <div>高血圧症・2型糖尿病。アスピリンアレルギーあり。</div>
+                                    <div class="mb-2 font-semibold text-slate-700 mt-3">診察所見</div>
+                                    <div>脈拍84/分、血圧 145/90mmHg、表情苦悶。</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-lg bg-white shadow-sm overflow-hidden border border-slate-200">
+                            <button
+                                class="accordion-button flex w-full items-center justify-between p-4 text-left hover:bg-slate-50 transition-colors border-l-4 border-purple-500">
+                                <div>
+                                    <p class="text-base font-medium text-slate-800">2023/10/26 心電図検査結果</p>
+                                    <p class="text-sm text-slate-500">検査技師：鈴木 花子</p>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-slate-500 transition-transform duration-300">expand_more</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="py-4 border-t text-sm text-slate-600">
+                                    <div class="mb-2 font-semibold text-slate-700">検査所見</div>
+                                    <div>II, III, aVF誘導でST上昇。心筋梗塞下壁型を示唆。</div>
+                                    <div>不整脈なし。心拍数78/分。</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-lg bg-white shadow-sm overflow-hidden border border-slate-200">
+                            <button
+                                class="accordion-button flex w-full items-center justify-between p-4 text-left hover:bg-slate-50 transition-colors border-l-4 border-green-500">
+                                <div>
+                                    <p class="text-base font-medium text-slate-800">2023/10/27 心臓カテーテルレポート</p>
+                                    <p class="text-sm text-slate-500">執刀医：佐藤 次郎</p>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-slate-500 transition-transform duration-300">expand_more</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="py-4 border-t text-sm text-slate-600">ここに心臓カテーテルレポートの詳細内容が表示されます...</div>
+                            </div>
+                        </div>
+                        <div class="rounded-lg bg-white shadow-sm overflow-hidden border border-slate-200">
+                            <button
+                                class="accordion-button flex w-full items-center justify-between p-4 text-left hover:bg-slate-50 transition-colors border-l-4 border-orange-500">
+                                <div>
+                                    <p class="text-base font-medium text-slate-800">2023/10/28 看護記録</p>
+                                    <p class="text-sm text-slate-500">看護師：田中 美咲</p>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-slate-500 transition-transform duration-300">expand_more</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="py-4 border-t text-sm text-slate-600">ここに看護記録の詳細内容が表示されます...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <footer
+            class="sticky bottom-0 bg-gradient-to-r from-primary-700/90 to-purple-700/80 backdrop-blur-2xl p-4 border-t-0 shadow-lg">
+            <div class="flex gap-3 mx-auto max-w-4xl">
+                <button
+                    class="flex-1 flex items-center justify-center rounded-lg h-12 px-5 bg-gradient-to-tr from-white to-sky-100/80 text-sky-800 text-base font-bold hover:bg-sky-200/60 ring-1 ring-cyan-200 transition-colors">
+                    <span class="material-symbols-outlined mr-2">edit</span>
+                    <span>編集</span>
+                </button>
+                <button
+                    class="flex-1 flex items-center justify-center rounded-lg h-12 px-5 bg-gradient-to-tr from-cyan-400 to-pink-300 text-white text-base font-bold hover:from-cyan-500 hover:to-pink-400 transition-colors shadow hover:shadow-xl ring-1 ring-pink-200/80">
+                    <span class="material-symbols-outlined mr-2">send</span>
+                    <span>送信</span>
+                </button>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const accordions = document.querySelectorAll('.accordion-button');
+
+            accordions.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const icon = button.querySelector('.material-symbols-outlined');
+
+                    button.classList.toggle('active');
+
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        content.style.paddingTop = '0';
+                        content.style.paddingBottom = '0';
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        content.style.paddingTop = '1rem';
+                        content.style.paddingBottom = '1rem';
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- フローティングアクションボタン -->
+    <script>
+        // フローティングアクションボタン追加
+        const fab = document.createElement("button");
+        fab.className = "fixed z-50 bottom-20 right-6 bg-primary-600 hover:bg-primary-700 text-white shadow-lg hover:shadow-2xl transition-all rounded-full w-16 h-16 flex items-center justify-center text-3xl";
+        fab.title = "新規作成";
+        fab.innerHTML = '<span class="material-symbols-outlined">add</span>';
+        fab.onclick = () => alert("新規機能（例：要約追加など）をここに実装できます。");
+        document.body.appendChild(fab);
+    </script>
+</body>
+
+</html>
