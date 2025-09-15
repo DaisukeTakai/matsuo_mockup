@@ -140,12 +140,6 @@
                         class="flex-1 text-center text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-fuchsia-500 to-pink-400 drop-shadow-lg tracking-tight mb-1">
                         AIによる診療情報要約
                     </h2>
-                    <!-- テーマ切替スイッチ -->
-                    <button id="themeToggleBtn"
-                        class="ml-2 text-slate-600 hover:text-slate-900 rounded-full p-1.5 hover:bg-slate-100 transition-colors"
-                        title="ダークモード切替">
-                        <span id="themeToggleIcon" class="material-symbols-outlined">dark_mode</span>
-                    </button>
                 </div>
             </header>
             <main class="p-4 sm:p-6 mx-auto max-w-4xl">
@@ -482,32 +476,6 @@
     </script>
     <!-- ダークモード切替スクリプト & フローティングアクションボタン -->
     <script>
-        // ダークモード切替
-        const themeToggleBtn = document.getElementById('themeToggleBtn');
-        const themeToggleIcon = document.getElementById('themeToggleIcon');
-        const userPref = localStorage.getItem('app-theme');
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        function applyTheme(isDark) {
-            if (isDark) {
-                document.documentElement.classList.add('dark');
-                themeToggleIcon.textContent = 'light_mode';
-            } else {
-                document.documentElement.classList.remove('dark');
-                themeToggleIcon.textContent = 'dark_mode';
-            }
-        }
-        // 初期
-        applyTheme(userPref === "dark" || (!userPref && prefersDark));
-        // ボタンクリック
-        if (themeToggleBtn) {
-            themeToggleBtn.addEventListener('click', () => {
-                const isDark = document.documentElement.classList.toggle('dark');
-                localStorage.setItem('app-theme', isDark ? "dark" : "light");
-                themeToggleIcon.textContent = isDark ? 'light_mode' : 'dark_mode';
-            });
-        }
-
         // フローティングアクションボタン追加
         const fab = document.createElement("button");
         fab.className = "fixed z-50 bottom-20 right-6 bg-primary-600 hover:bg-primary-700 text-white shadow-lg hover:shadow-2xl transition-all rounded-full w-16 h-16 flex items-center justify-center text-3xl";
